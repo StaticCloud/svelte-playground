@@ -1,23 +1,25 @@
 <script lang="ts">
-    const sayHi = e => {
-        e.preventDefault();
-        alert("Hi")
+    let media: 'movie' | 'podcast' | 'music' | 'tvShow';
+    let term: String;
+
+    const sayHi = () => {
+        alert('hi')
     }
 </script>
 
-<form>
+<form on:submit|preventDefault={sayHi}>
     <label for="term">Term</label>
-    <input id="term"/>
+    <input bind:value={term} id="term"/>
 
     <label for="media">Media</label>
-    <select name="media" id="media">
+    <select bind:value={media} id="media">
         <option value="movie">Movie</option>
         <option value="podcast">Podcast</option>
         <option value="music">Music</option>
         <option value="tvShow">TV Show</option>
     </select>
 
-    <button on:click={sayHi}>Search</button>
+    <button type=submit>Search</button>
 </form>
 
 <style>
