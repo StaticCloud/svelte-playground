@@ -1,5 +1,8 @@
-<script>
-
+<script lang="ts">
+    const sayHi = e => {
+        e.preventDefault();
+        alert("Hi")
+    }
 </script>
 
 <form>
@@ -14,7 +17,7 @@
         <option value="tvShow">TV Show</option>
     </select>
 
-    <button>Search</button>
+    <button on:click={sayHi}>Search</button>
 </form>
 
 <style>
