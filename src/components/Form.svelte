@@ -1,11 +1,13 @@
 <script lang="ts">
     let media: 'movie' | 'podcast' | 'music' | 'tvShow';
     let term: String;
+    export let data;
 
     const getData = async () => {
         term = term.split(" ").join("");
         const res = await fetch(`https://itunes.apple.com/search?term=${term}&media=${media}&limit=10`);
-        const data = await res.json();
+        data = await res.json();
+        data = data.results;
         console.log(data);
     }
 </script>
