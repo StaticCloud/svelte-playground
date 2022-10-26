@@ -2,12 +2,15 @@
     let media: 'movie' | 'podcast' | 'music' | 'tvShow';
     let term: String;
 
-    const sayHi = () => {
-        alert('hi')
+    const getData = async () => {
+        term = term.split(" ").join("");
+        const res = await fetch(`https://itunes.apple.com/search?term=${term}&media=${media}&limit=10`);
+        const data = await res.json();
+        console.log(data);
     }
 </script>
 
-<form on:submit|preventDefault={sayHi}>
+<form on:submit|preventDefault={getData}>
     <label for="term">Term</label>
     <input bind:value={term} id="term"/>
 
@@ -19,7 +22,7 @@
         <option value="tvShow">TV Show</option>
     </select>
 
-    <button type=submit>Search</button>
+    <button disabled={!term} type=submit>Search</button>
 </form>
 
 <style>
