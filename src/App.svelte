@@ -1,14 +1,21 @@
 <script lang="ts">
+  import AudioPlayer from './components/AudioPlayer.svelte';
   import Test from './components/Test.svelte'
   import Form from './components/Form.svelte'
   let data = [];
 </script>
 
-<Test text="hello there"/>
-<Form bind:data></Form>
-{#each data as item}
-  <p>{item.trackName}</p>
-{/each}
+<div>
+  <Test text="hello there"/>
+  <Form bind:data></Form>
+  {#each data as item}
+    <AudioPlayer 
+      src={item.previewUrl}
+      title={item.trackCensoredName}
+      composer={item.artistName}>
+    </AudioPlayer>
+  {/each}
+</div>
 <style>
 
 </style>
