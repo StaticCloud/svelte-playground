@@ -8,7 +8,7 @@
         const res = await fetch(`https://itunes.apple.com/search?term=${term}&media=${media}&limit=10`);
         data = await res.json();
         data = data.results;
-        console.log(data);
+        term = '';
     }
 </script>
 

@@ -9,11 +9,13 @@
   <Test text="hello there"/>
   <Form bind:data></Form>
   {#each data as item}
-    <AudioPlayer 
-      src={item.previewUrl}
-      title={item.trackCensoredName}
-      composer={item.artistName}>
-    </AudioPlayer>
+    {#if item.kind === "song"}
+      <AudioPlayer 
+        src={item.previewUrl}
+        title={item.trackCensoredName}
+        composer={item.artistName}>
+      </AudioPlayer>
+    {/if}
   {/each}
 </div>
 <style>
