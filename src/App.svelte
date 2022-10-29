@@ -13,7 +13,8 @@
       <AudioPlayer 
         src={item.previewUrl}
         title={item.trackCensoredName}
-        composer={item.artistName}>
+        composer={item.artistName}
+        cover={item.artworkUrl100}>
       </AudioPlayer>
     {/if}
   {/each}

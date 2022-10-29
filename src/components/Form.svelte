@@ -9,6 +9,7 @@
         data = await res.json();
         data = data.results;
         term = '';
+        console.log(data);
     }
 </script>
 

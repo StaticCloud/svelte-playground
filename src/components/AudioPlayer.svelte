@@ -12,6 +12,7 @@
 	export let src;
 	export let title;
 	export let composer;
+	export let cover;
 
 	let audio;
 	let paused = true;
@@ -34,6 +35,7 @@
 </script>
 
 <article>
+	<img alt={title} src={cover}/>
 	<div>
 		<h2>{title}</h2>
 		<p><strong>{composer}</strong></p>
@@ -51,8 +53,12 @@
 <style>
 	article { 
 		margin: 10px 0;
-		max-width: 400px;
+		max-width: 600px;
 		background-color: rgb(71, 71, 71);
+
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
 	}
 	article > div {
 		padding: 13px;
@@ -63,5 +69,6 @@
 	}
 	audio { 
 		width: 100%;
+		flex-basis: 1;
 	}
 </style>
