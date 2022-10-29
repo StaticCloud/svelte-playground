@@ -33,9 +33,11 @@
 	}
 </script>
 
-<article class:playing={!paused}>
-	<h2>{title}</h2>
-	<p><strong>{composer}</strong></p>
+<article>
+	<div>
+		<h2>{title}</h2>
+		<p><strong>{composer}</strong></p>
+	</div>
     <!-- the audio element has a paused property by default, so we're going to bind that to our paused variable -->
 	<audio
 		bind:this={audio}
@@ -47,8 +49,19 @@
 </article>
 
 <style>
-	article { margin: 0 0 1em 0; max-width: 800px }
-	h2, p { margin: 0 0 0.3em 0; }
-	audio { width: 100%; margin: 0.5em 0 1em 0; }
-	.playing { color: #ff3e00; }
+	article { 
+		margin: 10px 0;
+		max-width: 400px;
+		background-color: rgb(71, 71, 71);
+	}
+	article > div {
+		padding: 13px;
+	}
+	h2, p { 
+		margin: 0 0 0.3em 0; 
+		color: white;
+	}
+	audio { 
+		width: 100%;
+	}
 </style>
