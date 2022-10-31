@@ -1,5 +1,6 @@
 <script lang="ts">
   import AudioPlayer from './components/AudioPlayer.svelte';
+  import Movie from './components/Movie.svelte';
   import Test from './components/Test.svelte'
   import Form from './components/Form.svelte'
   let data = [];
@@ -16,6 +17,11 @@
         composer={item.artistName}
         cover={item.artworkUrl100}>
       </AudioPlayer>
+    {/if}
+    {#if item.kind === "feature-movie"}
+      <Movie
+        title={item.trackCensoredName}>
+      </Movie>
     {/if}
   {/each}
 </div>
