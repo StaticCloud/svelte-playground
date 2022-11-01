@@ -20,7 +20,9 @@
     {/if}
     {#if item.kind === "feature-movie"}
       <Movie
-        title={item.trackCensoredName}>
+        title={item.trackCensoredName}
+        poster={item.artworkUrl100}
+        desc={item.shortDescription}>
       </Movie>
     {/if}
   {/each}
