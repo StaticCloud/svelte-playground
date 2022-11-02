@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/StaticCloud/svelte-playground/issues"
   },
-  "homepage": "https://github.com/StaticCloud/svelte-playground#readme"
+  "homepage": "https://github.com/StaticCloud/svelte-playground#readme",
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
 }
